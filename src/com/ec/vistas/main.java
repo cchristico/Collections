@@ -23,19 +23,21 @@ public class main {
      
         //Collections
         //ArrayList
-        ArrayList<String> listaMarcasCoches = new ArrayList<String>(); // El tipo de listaMarcasCoches es Collection
-        listaMarcasCoches.add("Audi");
-        listaMarcasCoches.add("Paganni");
-        listaMarcasCoches.add("Maserati");
-        listaMarcasCoches.add("Ferrari");
-        listaMarcasCoches.add("Ford");
-        listaMarcasCoches.add("Fiat");
-        System.out.println("Número elementos antes de eliminar: " + listaMarcasCoches.size() ) ;
-        System.out.println (listaMarcasCoches.toString() ) ;
-        listaMarcasCoches.remove ("Ford");
-        listaMarcasCoches.remove ("Fiat");
-        System.out.println("Número elementos después de eliminar Ford y Fiat:" + listaMarcasCoches.size() ) ;
-        System.out.println(listaMarcasCoches.toString () );
+        ArrayList<Persona> listaPersonas = new ArrayList<Persona>(); // El tipo de listaPersona es Collection
+        Persona p = new Persona("Jose", "Urbina", 56);
+        Persona p1 = new Persona("Jose", "Flores", 66);
+        Persona p2= new Persona("Jaime","Roldos", 76);
+        listaPersonas.add(p);
+        listaPersonas.add(p1);
+        listaPersonas.add(p2);
+        
+        System.out.println("Número elementos antes de eliminar: " + listaPersonas.size() ) ;
+        System.out.println (listaPersonas.toString() ) ;
+        
+        listaPersonas.remove (p);
+        listaPersonas.remove (p1);
+        System.out.println("Número elementos después de eliminar Jose Urbina y Jose Flores:" + listaPersonas.size() ) ;
+        System.out.println(listaPersonas.toString () );
 
     }    
 }

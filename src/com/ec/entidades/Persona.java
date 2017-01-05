@@ -19,6 +19,9 @@ public class Persona {
         this.apellido = apellido;
         this.edad = edad;
     }
+    public Persona( ) {
+     
+    }
     
     
 
