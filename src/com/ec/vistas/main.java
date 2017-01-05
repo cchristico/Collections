@@ -19,47 +19,49 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //Arreglo de strings
-      /*  String personas[]= new String[5];
-        System.out.println(personas.length);
-        personas[0]="Manuel";
-        personas[1]="Maria";
-        personas[2]="Juana";
-        personas[3]="Pepina";
-        personas[4]="Dulcinea";
-        System.out.println(personas[0]+"\n"+personas[1]+"\n"+personas[2]+"\n"+personas[3]+"\n"+personas[4]);
-         Random rnd = new Random();
+     
+      Random rnd = new Random();
         
         //Llenado "Dinamico"
         
         System.out.println("Ingrese la longitud del arreglo");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        Double numerosRandomicos[]= new Double[n];
+        Integer numerosRandomicos[]= new Integer[n];
         System.out.println("Longitud antes de llenar:"+numerosRandomicos.length);
         for(int i=0;i<numerosRandomicos.length;i++)
         {
-            numerosRandomicos[i]=rnd.nextDouble();
+            numerosRandomicos[i]=i+1;
         }
-        for(Double num:numerosRandomicos)
+        int count=0;
+        for(Integer num:numerosRandomicos)
         {
+            if(num%2==0)
+            {
+                count++;
+            }
             System.out.print(" "+num+" ");
         }
         System.out.println("");
-        System.out.println("Longitud despues de llenar:"+numerosRandomicos.length);
-    }
-    */
-         
         
-        Persona pers[] = new Persona[3];
-        pers[0]= new Persona("Jose", "Urbina", 40);
-        pers[1]= new Persona("Marco", "Flores", 20);
-        pers[2]= new Persona("Pedro", "Carrasco", 30);
-        for(Persona p:pers)
+        System.out.println("Longitud eliminando los pares: "+(numerosRandomicos.length-count));
+        Integer [] numerosRandomicos2= new Integer[numerosRandomicos.length-count];
+        int nu=1;
+        for(int i=0;i<numerosRandomicos2.length;i++)
         {
-            System.out.println(p.getNombre()+" "+p.getApellido()+" "+p.getEdad());
+            
+            if(nu%2!=0)
+            {
+                numerosRandomicos2[i]=nu;
+                nu=nu+2;
+            }
         }
-    }
-    
+        for(Integer num:numerosRandomicos2)
+        {
+            System.out.print(num+" ");
+        }
+        
+        System.out.println("\nLongitud despues de llenar:"+numerosRandomicos2.length);
+        
+    }    
 }
