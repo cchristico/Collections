@@ -7,8 +7,8 @@ package com.ec.vistas;
 
 import com.ec.entidades.Persona;
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  *
@@ -23,21 +23,47 @@ public class main {
      
         //Collections
         //ArrayList
-        ArrayList<Persona> listaPersonas = new ArrayList<Persona>(); // El tipo de listaPersona es Collection
-        Persona p = new Persona("Jose", "Urbina", 56);
-        Persona p1 = new Persona("Jose", "Flores", 66);
-        Persona p2= new Persona("Jaime","Roldos", 76);
-        listaPersonas.add(p);
-        listaPersonas.add(p1);
-        listaPersonas.add(p2);
-        
-        System.out.println("Número elementos antes de eliminar: " + listaPersonas.size() ) ;
-        System.out.println (listaPersonas.toString() ) ;
-        
-        listaPersonas.remove (p);
-        listaPersonas.remove (p1);
-        System.out.println("Número elementos después de eliminar Jose Urbina y Jose Flores:" + listaPersonas.size() ) ;
-        System.out.println(listaPersonas.toString () );
+       
+  	List<String> navegadoresInternet = new ArrayList<String>();
+ 
+		// agregar valores diferentes a la lsita
+		navegadoresInternet.add("eBay");
+		navegadoresInternet.add("Paypal");
+		navegadoresInternet.add("Google");
+		navegadoresInternet.add("Yahoo");
+ 
+		// iterar con un for
+		System.out.println("Ejemplo usando: For");
+		for (int i = 0; i < navegadoresInternet.size(); i++) {
+			System.out.println(navegadoresInternet.get(i));
+		}
+ 
+		// iterar con foreach
+		System.out.println("Ejemplo con foreach");
+		for (String temp : navegadoresInternet) {
+			System.out.println(temp);
+		}
+ 
+		// iterate via "iterator loop"
+		System.out.println("Ejemplo con Iterador");
+		Iterator<String> crunchifyIterator = navegadoresInternet.iterator();
+		while (crunchifyIterator.hasNext()) {
+			System.out.println(crunchifyIterator.next());
+		}
+ 
+		// iterate via "while loop"
+		System.out.println("Emplo con un ciclo While");
+		int i = 0;
+		while (i < navegadoresInternet.size()) {
+			System.out.println(navegadoresInternet.get(i));
+			i++;
+		}
+ 
+		// collection stream() util: Retorna una secuencia Stream como si fuera el funete
+		System.out.println("Ejemplo con collection stream() util....");
+		navegadoresInternet.forEach((temp) -> {
+			System.out.println(temp);
+		});
 
     }    
 }
