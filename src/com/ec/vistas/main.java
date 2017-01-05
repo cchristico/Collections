@@ -6,6 +6,7 @@
 package com.ec.vistas;
 
 import com.ec.entidades.Persona;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,48 +21,21 @@ public class main {
      */
     public static void main(String[] args) {
      
-      Random rnd = new Random();
-        
-        //Llenado "Dinamico"
-        
-        System.out.println("Ingrese la longitud del arreglo");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        Integer numerosRandomicos[]= new Integer[n];
-        System.out.println("Longitud antes de llenar:"+numerosRandomicos.length);
-        for(int i=0;i<numerosRandomicos.length;i++)
-        {
-            numerosRandomicos[i]=i+1;
-        }
-        int count=0;
-        for(Integer num:numerosRandomicos)
-        {
-            if(num%2==0)
-            {
-                count++;
-            }
-            System.out.print(" "+num+" ");
-        }
-        System.out.println("");
-        
-        System.out.println("Longitud eliminando los pares: "+(numerosRandomicos.length-count));
-        Integer [] numerosRandomicos2= new Integer[numerosRandomicos.length-count];
-        int nu=1;
-        for(int i=0;i<numerosRandomicos2.length;i++)
-        {
-            
-            if(nu%2!=0)
-            {
-                numerosRandomicos2[i]=nu;
-                nu=nu+2;
-            }
-        }
-        for(Integer num:numerosRandomicos2)
-        {
-            System.out.print(num+" ");
-        }
-        
-        System.out.println("\nLongitud despues de llenar:"+numerosRandomicos2.length);
-        
+        //Collections
+        //ArrayList
+        ArrayList<String> listaMarcasCoches = new ArrayList<String>(); // El tipo de listaMarcasCoches es Collection
+        listaMarcasCoches.add("Audi");
+        listaMarcasCoches.add("Paganni");
+        listaMarcasCoches.add("Maserati");
+        listaMarcasCoches.add("Ferrari");
+        listaMarcasCoches.add("Ford");
+        listaMarcasCoches.add("Fiat");
+        System.out.println("Número elementos antes de eliminar: " + listaMarcasCoches.size() ) ;
+        System.out.println (listaMarcasCoches.toString() ) ;
+        listaMarcasCoches.remove ("Ford");
+        listaMarcasCoches.remove ("Fiat");
+        System.out.println("Número elementos después de eliminar Ford y Fiat:" + listaMarcasCoches.size() ) ;
+        System.out.println(listaMarcasCoches.toString () );
+
     }    
 }
