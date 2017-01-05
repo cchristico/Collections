@@ -19,16 +19,9 @@ public class Persona {
         this.apellido = apellido;
         this.edad = edad;
     }
-    public Persona( ) {
-     
-    }
-    
-    
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -48,6 +41,9 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
+    @Override
+    public String toString(){
+        return this.getNombre()+" "+this.getApellido()+" "+this.edad;
+    }
     
 }
