@@ -31,6 +31,7 @@ public class main {
 		navegadoresInternet.add("Paypal");
 		navegadoresInternet.add("Google");
 		navegadoresInternet.add("Yahoo");
+                navegadoresInternet.add("Facebook");
  
 		// iterar con un for
 		System.out.println("Ejemplo usando: For");
