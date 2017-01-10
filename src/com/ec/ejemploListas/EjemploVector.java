@@ -39,11 +39,6 @@ public class EjemploVector {
             System.out.print(nombre[i]+",");
          
         }
-     
-     arrayObjetos[0]=new Empleado("Fernando", "Ureña", 23, 1000);
-		arrayObjetos[1]=new Empleado("Epi", "Dermis", 30, 1500);
-		arrayObjetos[2]=new Empleado("Blas", "Femia", 25, 1200);
-     
-     
+       
 }
 }
