@@ -5,10 +5,8 @@
  */
 package com.ec.vistas;
 
-import com.ec.entidades.Persona;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /**
  *
@@ -19,52 +17,46 @@ public class main {
     /**
      * @param args the command line arguments
      */
+    static class PQsort implements Comparator<Integer> {
+ 
+		public int compare(Integer one, Integer two) {
+			return two - one;
+		}
+	}
     public static void main(String[] args) {
      
-        //Collections
-        //ArrayList
-       
-  	List<String> navegadoresInternet = new ArrayList<String>();
+       int[] ia = { 1, 10, 5, 3, 4, 7, 6, 9, 8 };
+		PriorityQueue<Integer> pq1 = new PriorityQueue<Integer>();
  
-		// agregar valores diferentes a la lsita
-		navegadoresInternet.add("eBay");
-		navegadoresInternet.add("Paypal");
-		navegadoresInternet.add("Google");
-		navegadoresInternet.add("Yahoo");
-                navegadoresInternet.add("Facebook");
- 
-		// iterar con un for
-		System.out.println("Ejemplo usando: For");
-		for (int i = 0; i < navegadoresInternet.size(); i++) {
-			System.out.println(navegadoresInternet.get(i));
+		// Use el método offer () para agregar elementos a PriorityQueue pq1
+		for (int x : ia) {
+			pq1.offer(x);
 		}
  
-		// iterar con foreach
-		System.out.println("Ejemplo con foreach");
-		for (String temp : navegadoresInternet) {
-			System.out.println(temp);
+		System.out.println("pq1: " + pq1);
+ 
+		PQsort pqs = new PQsort();
+		PriorityQueue<Integer> pq2 = new PriorityQueue<Integer>(10, pqs);
+		// En este caso particular, podemos simplemente usar Collections.reverseOrder ()
+		// En lugar de un comparador autodefinido
+		for (int x : ia) {
+			pq2.offer(x);
 		}
  
-		// iterate via "iterator loop"
-		System.out.println("Ejemplo con Iterador");
-		Iterator<String> crunchifyIterator = navegadoresInternet.iterator();
-		while (crunchifyIterator.hasNext()) {
-			System.out.println(crunchifyIterator.next());
-		}
+		System.out.println("pq2: " + pq2);
  
-		// iterate via "while loop"
-		System.out.println("Emplo con un ciclo While");
-		int i = 0;
-		while (i < navegadoresInternet.size()) {
-			System.out.println(navegadoresInternet.get(i));
-			i++;
-		}
+		// print size
+		System.out.println("size: " + pq2.size());
+		// return highest priority element in the queue without removing it
+		System.out.println("peek: " + pq2.peek());
+		// print size
+		System.out.println("size: " + pq2.size());
+		// return highest priority element and removes it from the queue
+		System.out.println("poll: " + pq2.poll());
+		// print size
+		System.out.println("size: " + pq2.size());
  
-		// collection stream() util: Retorna una secuencia Stream como si fuera el funete
-		System.out.println("Ejemplo con collection stream() util....");
-		navegadoresInternet.forEach((temp) -> {
-			System.out.println(temp);
-		});
+		System.out.print("pq2: " + pq2);
 
     }    
 }
