@@ -45,15 +45,19 @@ public class main {
  
 		System.out.println("pq2: " + pq2);
  
-		// print size
+		// tamaño
 		System.out.println("size: " + pq2.size());
-		// return highest priority element in the queue without removing it
+		//Devuelve 1 elemento en función del orden sin eliminarlo.
 		System.out.println("peek: " + pq2.peek());
-		// print size
+                //tememos los mismos elementos
+                
+                // tamaño
 		System.out.println("size: " + pq2.size());
-		// return highest priority element and removes it from the queue
-		System.out.println("poll: " + pq2.poll());
-		// print size
+                // Devuelve 1 elemento en función del orden y lo elimina.
+		//hemos eliminado el 1º elemento
+                System.out.println("poll: " + pq2.poll());
+                
+		//Devuelve 1 elemento en función del orden y lo elimina.
 		System.out.println("size: " + pq2.size());
  
 		System.out.print("pq2: " + pq2);
