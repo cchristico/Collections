@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.ec.ejemploListas;
-    import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 /**
